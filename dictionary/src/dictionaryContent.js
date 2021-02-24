@@ -1,13 +1,14 @@
-import React, { Component } from "react";
 
-class DictionaryContent extends Component {
-  render() {
-    return (
-      <div>
-        <p>This is some test text</p>
-      </div>
-    );
-  }
+
+import React from "react";
+//https://random-words-api.vercel.app/word - api to use
+function dictionaryContent() {
+  return (
+    <div>
+      <p>This is some test text</p>
+    </div>
+  );
 }
 
-export default DictionaryContent;
+export default dictionaryContent;
+
