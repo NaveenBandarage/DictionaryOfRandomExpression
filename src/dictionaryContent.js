@@ -1,43 +1,19 @@
 
 
-import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
+// import React, { useEffect, useRef, useState } from "react";
 
-//https://random-words-api.vercel.app/word - api to use
-function DictionaryContent() {
-  const [appState, setAppState] = useState({
-    loading: true,
-    repos: null,
-  });
-  useEffect(() => {
-    let data = null;
-    let promises = [];
-    const apiUrl = `https://random-words-api.vercel.app/word`;
-    axios.get(apiUrl).then((res) => {
-      console.log(res);
-      // res.data.forEach((id) => {
-      //   promises.push(
-      //     axios.get(
-      //       sanitizeUrl(
-      //         `https://hacker-news.firebaseio.com/v0/item/${id}​​​​​.json?print=pretty`
-      //       )
-      //     )
-      //   );
-      // });
-      // Promise.all(promises)
-      //   .then((res) => {
-      //     console.log(Object.entries(res));
-      //     setAppState({ loading: false, repos: res });
-      //   })
-      //   .catch((err) => console.log(err));
-    });
-  }, []);
-  return (
-    <div>
-      <p>This is some test text</p>
-    </div>
-  );
-}
+// //https://random-words-api.vercel.app/word - api to use
+// const DictionaryContent = (props) => {
+//     const { word } = props;
 
-export default DictionaryContent;
+//   return (
+//     <div>
+//       <p>{word}</p>
+
+//       <p>This is some test {word}</p>
+//     </div>
+//   );
+// };
+
+// export default DictionaryContent;
 

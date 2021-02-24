@@ -1,21 +1,48 @@
 import logo from "./logo.svg";
 import "./App.css";
+import axios from "axios";
 
 import React, { useEffect, useState } from "react";
 import Timer from "./timer";
 import DictionaryContent from "./dictionaryContent";
 
 function App() {
+   const [appState, setAppState] = useState({
+     loading: true,
+     wordData: null,
+     wordDefintion: null,
+   });
+   useEffect(() => {
+     const apiUrl = `https://random-words-api.vercel.app/word`;
+     axios.get(apiUrl).then((res) => {
+       console.log(res.data[0]);
+       setAppState({
+         loading: false,
+         wordData: res.data[0].word,
+         wordDefintion: res.data[0].definition,
+       });
+     });
+   }, []);
+
+   if (appState.loading) {
+     return (
+       <div className="wsb-div">
+         <img src={logo} alt="loading..." />
+       </div>
+     );
+   }
   return (
     <div>
-      <DictionaryContent />
-
+      <div className="dictionaryText"> 
+        <p>{appState.wordData}</p>
+        <p>{appState.wordDefintion}.</p>
+      </div>
       <div id="header-content">
-        <p>This</p>
-        <p>artwork was reborn</p>
+        <p>Been</p>
+        <p>on here since</p>
         <div class="inlineDiv">
           <Timer callQueuedTime="0" />
-          <p> seconds ago.</p>
+          <p> seconds ago .</p>
         </div>
       </div>
     </div>
