@@ -3,12 +3,10 @@ import React, { useEffect, useState } from "react";
 const Timer = ({ callQueuedTime }) => {
   const [time, setTime] = useState(() => new Date().getSeconds());
   useEffect(() => {
-    const queuedTime = new Date(callQueuedTime).getSeconds();
-    console.log(queuedTime);
-
+    const queuedTime = 0;
     const intervalId = setInterval(function () {
       setTime(new Date().getSeconds() + queuedTime);
-    }, 1);
+    }, 1000);
     return () => {
       clearInterval(intervalId);
     };
