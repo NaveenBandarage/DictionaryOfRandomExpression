@@ -33,9 +33,15 @@ function App() {
    }
   return (
     <div>
-      <div className="dictionaryText"> 
-        <p>{appState.wordData}</p>
-        <p>{appState.wordDefintion}.</p>
+      <div className="dictionaryText">
+        <div class="inlineDiv">
+          <p className="italicsP">w. </p>
+          <p>{appState.wordData}</p>
+        </div>
+        <div class="inlineDiv">
+          <p className="italicsP">d. </p>
+          <p>{appState.wordDefintion}.</p>
+        </div>
       </div>
       <div id="header-content">
         <p>Been</p>

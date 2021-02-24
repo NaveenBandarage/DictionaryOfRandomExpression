@@ -35,3 +35,6 @@ position: absolute;
     transform: translateX(-50%) translateY(-50%);
   text-align: center;
 }
+.italicsP{
+    font-style: italic;
+}
