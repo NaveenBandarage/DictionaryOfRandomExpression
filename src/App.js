@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
-
+import logo from "./zero2.gif";
 import React, { useEffect, useState } from "react";
 import Timer from "./timer";
 
