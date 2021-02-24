@@ -1,0 +1,27 @@
+body {
+  background-color: black;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+
+p{
+    font-family: 'Merriweather', serif;
+    margin:0;
+    font-size: xxx-large;
+    color: white;
+    
+}
+
+#header-content {
+  position: absolute;
+  bottom: 0;
+  left: 3;
+}
+
+
+.inlineDiv p{
+display: inline;
+}
