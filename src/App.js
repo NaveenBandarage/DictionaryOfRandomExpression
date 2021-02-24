@@ -3,7 +3,7 @@ import axios from "axios";
 import logo from "./zero2.gif";
 import React, { useEffect, useState } from "react";
 import Timer from "./timer";
-
+import Signup from "./components/signups";
 function App() {
    const [appState, setAppState] = useState({
      loading: true,
@@ -31,6 +31,7 @@ function App() {
    }
   return (
     <div>
+      <Signup />
       <div className="dictionaryText">
         <div class="inlineDiv">
           <p className="italicsP">w. </p>
