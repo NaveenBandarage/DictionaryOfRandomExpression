@@ -1,11 +1,20 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Form, Card, Button } from "react-bootstrap";
-
+import { useAuth } from "../contexts/AuthContext";
 export default function Signups() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+const { signUp } = useAuth();
+const [error, setError] = useState("");
 
+function handleSubmit(e) {
+  e.preventDefault();
+  signUp(emailRef.current.value, passwordRef.current.value);
+  if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+    return setError("Passwords don't match");
+  }
+}
   return (
     <>
       <Card>

@@ -4,6 +4,8 @@ import logo from "./zero2.gif";
 import React, { useEffect, useState } from "react";
 import Timer from "./timer";
 import Signup from "./components/signups";
+import { Container } from "react-bootstrap";
+import { AuthProvider } from "./contexts/AuthContext";
 function App() {
    const [appState, setAppState] = useState({
      loading: true,
@@ -31,8 +33,17 @@ function App() {
    }
   return (
     <div>
-      <Signup />
-      <div className="dictionaryText">
+      <AuthProvider>
+        <Container
+          className="d-flex align-items-center justify-content-center"
+          style={{ minHeight: "100vh" }}
+        >
+          <div className="w-100" style={{ maxWidth: "400px" }}>
+            <Signup />
+          </div>
+        </Container>
+      </AuthProvider>
+      {/* <div className="dictionaryText">
         <div class="inlineDiv">
           <p className="italicsP">w. </p>
           <p>{appState.wordData}</p>
@@ -49,7 +60,7 @@ function App() {
           <Timer callQueuedTime="0" />
           <p> seconds ago .</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
